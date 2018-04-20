@@ -11,12 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180419235939) do
+ActiveRecord::Schema.define(version: 20180420001453) do
 
   create_table "groups", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "items", force: true do |t|
+    t.string   "description"
+    t.integer  "group_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "items", ["group_id"], name: "index_items_on_group_id"
 
 end
