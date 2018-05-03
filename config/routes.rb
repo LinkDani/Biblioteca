@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :autores
+
   resources :items
 
   resources :groups

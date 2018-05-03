@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180420001453) do
+ActiveRecord::Schema.define(version: 20180503223238) do
+
+  create_table "autores", force: true do |t|
+    t.string   "description"
+    t.integer  "item_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "autores", ["item_id"], name: "index_autores_on_item_id"
 
   create_table "groups", force: true do |t|
     t.string   "name"

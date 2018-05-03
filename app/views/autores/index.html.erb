@@ -1,0 +1,27 @@
+<h1>Listing autores</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Item</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @autores.each do |autore| %>
+      <tr>
+        <td><%= autore.description %></td>
+        <td><%= autore.item %></td>
+        <td><%= link_to 'Show', autore %></td>
+        <td><%= link_to 'Edit', edit_autore_path(autore) %></td>
+        <td><%= link_to 'Destroy', autore, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Autore', new_autore_path %>
