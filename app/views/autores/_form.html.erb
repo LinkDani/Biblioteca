@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :item_id %><br>
-    <%= f.text_field :item_id %>
+    <%= f.select :item_id, Item.all.collect {|item| [item.name, item.id]} %>
   </div>
   <div class="actions">
     <%= f.submit %>
