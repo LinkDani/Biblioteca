@@ -5,6 +5,7 @@
     <tr>
       <th>Description</th>
       <th>Group</th>
+      <th>Autor</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -13,7 +14,8 @@
     <% @items.each do |item| %>
       <tr>
         <td><%= item.description %></td>
-        <td><%= item.group.name %></td>
+        <td><%= item.group && item.group.name %></td>
+        <td><%= item.autore && item.autore.description%></td>
         <td><%= link_to 'Show', item %></td>
         <td><%= link_to 'Edit', edit_item_path(item) %></td>
         <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>

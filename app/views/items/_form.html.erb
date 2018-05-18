@@ -19,6 +19,10 @@
     <%= f.label :group_id %><br>
     <%= f.select :group_id, Group.all.collect {|group| [group.name, group.id]} %>
   </div>
+   <div class="field">
+      <%= f.label :autor_id %><br>
+      <%= f.select :autor_id, Autore.all.collect {|autor| [autor.description, autor.id]} %>
+    </div>
   <div class="actions">
     <%= f.submit %>
   </div>
